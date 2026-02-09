@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ðŸ’›</title>
+
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fde2e4, #fff1c1, #d4f1f4, #e2f0cb);
+    color: #444;
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 60px 20px;
+    max-width: 850px;
+    margin: auto;
+    animation: fadeIn 1.4s ease;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .center { text-align: center; }
+
+  .card {
+    background: rgba(255,255,255,0.65);
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  }
+
+  ul { list-style: none; padding: 0; }
+
+  ul li {
+    background: rgba(255,255,255,0.7);
+    padding: 15px 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+  }
+
+  button {
+    background: #ffd6e0;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover { background: #ffc2d1; }
+
+  footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: #666;
+  }
+
+  /* Start Screen */
+  #startScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #fde2e4, #fff1c1, #d4f1f4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  #startScreen button {
+    font-size: 1.2rem;
+    padding: 18px 40px;
+  }
+
+  /* Floating Hearts */
+  .heart {
+    position: fixed;
+    bottom: -10px;
+    animation: floatUp linear infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0); opacity: 0.8; }
+    to { transform: translateY(-110vh); opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Start Screen -->
+<div id="startScreen">
+  <button onclick="startExperience()">Tap to begin ðŸ¤</button>
+</div>
+
+<!-- Background Music -->
+<!-- Background Music -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2022/08/01/audio_9c4c7d0f5c.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function startExperience() {
+    // Always hide the start screen first
+    document.getElementById("startScreen").style.display = "none";
+
+    // Then try to play music (even if it fails, site continues)
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.6;
+
+    music.play().catch(() => {
+      console.log("Music blocked by browser â€” user can still enjoy site");
+    });
+  }
+
+  // Floating hearts
+  const hearts = ["ðŸ’—","ðŸ’–","ðŸ’›","ðŸ’™","ðŸ’š"];
+  function createHeart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.animationDuration = 6 + Math.random() * 6 + "s";
+    h.style.fontSize = 16 + Math.random() * 22 + "px";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 12000);
+  }
+  setInterval(createHeart, 700);
+</script>
+
+<!-- Content -->
+<section>
+  <h1>Happy Birthday, Dearest Zuhair ðŸŽ‰</h1>
+  <h2>This little corner of the internet is just for you just like the small corner in my heart</h2>
+  <p id="typing" class="center"></p>
+</section>
+
+<section>
+  <div class="card">
+    <h2>A little note for you ðŸ¤</h2>
+    <p>Some people become important without trying. Youâ€™re one of those people.</p>
+    <p>Talking to you feels easy. Thatâ€™s rare, and I value it more than you know.</p>
+    <p>I donâ€™t always say things perfectly, but I hope you know you mean a lot to me.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Things I appreciate about you âœ¨</h2>
+  <ul>
+    <li>The way you make me happy effortlessly.</li>
+    <li>How conversations with you feel safe.</li>
+    <li>Your patience.</li>
+    <li>Your sense of humor (including the bad jokes)</li>
+    <li>The calm you bring without realizing it.</li>
+    <li>how you encourage me to be positive and kind to myself</li>
+    <li>how u sit through all my yapping session</li>
+    <li>how you've become the long term therapist and temporary  husband </li>
+     <li>The little hearts that u add : )</li>
+     <li>and the list goes onnnn</li>
+  </ul>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Small things that matter ðŸŒ±</h2>
+    <p>Little conversations. The constant encouragement. Moments that meant more than they looked.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Birthday wishes, just for you ðŸŽ‚</h2>
+  <p>I hope this year is gentle with you.<br>I hope you feel proud of yourself more often <br> and make your ammi proud she's definitely the luckiest mother coz she got u</p>
+  <p>And I hope you never forget how appreciated you are â€” by me, and by the world.<br> love u (gently kisses your forehead)</p>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Even from far away ðŸŒ</h2>
+    <p>I wish I could say this in person. But until then, this will have to do.</p>
+    <p>Even from far away, youâ€™ve become someone important in my life.</p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Thatâ€™s all for now.<br>
+    But this page will always be here â€” just like my care for you.
+  </p>
+  <p>Happy Birthday ðŸ¤<br>â€” Tanya (your not so real wife)</p>
+</footer>
+<script>
+  const typingText =
+`  I'm really glad that u exist and i hope your birthday reminds you how special you are to me and that I'm happy to have u in my life`;
+
+  let index = 0;
+  function typeEffect() {
+    if (index < typingText.length) {
+      document.getElementById("typing").innerHTML += typingText.charAt(index);
+      index++;
+      setTimeout(typeEffect, 45); // speed: lower = faster
+    }
+  }
+
+  typeEffect();
+</script>
+</body>
+</html>
